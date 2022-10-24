@@ -13,9 +13,9 @@ if ( ! in_array($extension, $allowed) )
 }
 
 $max_size_mb = 0.5;
-$max_size_kb = $max_size_mb * 1024 * 1024;
+$max_size_bytes = $max_size_mb * 1024 * 1024;
 
-if ( $_FILES["file_name"]["size"] > $max_size_kb )
+if ( $_FILES["file_name"]["size"] > $max_size_bytes )
 {
     die("The file size is too large. You may only upload up to: " . $max_size_mb . "MB");
 }
