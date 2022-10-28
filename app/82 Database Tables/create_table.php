@@ -2,9 +2,8 @@
 $server   = "localhost";
 $username = "admin";
 $password = "E9bIyRDwzidT";
-$database = "dino_test_db";
 
-$connection = new mysqli( $server, $username, $password, $database );
+$connection = new mysqli( $server, $username, $password );
 
 if ( $connection->connect_error ) {
     die( $connection->connect_error );
