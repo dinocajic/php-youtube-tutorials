@@ -85,4 +85,30 @@ class Author
 
         return true;
     }
+
+    public function update_email( array $author )
+    {
+        $sql = "UPDATE authors SET email = ? WHERE id = ?";
+
+        $db = new DB;
+        $mysqli = $db->_connection;
+
+        $statement = $mysqli->prepare( $sql );
+        $statement->bind_param(
+            "si",
+            $author['email'],
+            $author['id']
+        );
+        $statement->execute();
+        $error = $statement->error;
+
+        $statement->close();
+        $db->close();
+
+        if ( $error ) {
+            return false;
+        }
+
+        return true;
+    }
 }
