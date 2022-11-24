@@ -68,3 +68,8 @@ var_dump($datetime);
 $datetime = new DateTime("11/23/2022 22:01:00");
 $datetime->sub(new DateInterval("P1Y65D"));
 var_dump($datetime);
+
+// Subtracting Time
+$datetime = new DateTime("11/23/2022 22:01:00");
+$datetime->sub(new DateInterval("PT10H"));
+var_dump($datetime);
