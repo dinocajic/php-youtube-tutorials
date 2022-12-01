@@ -1,5 +1,4 @@
 <?php
-
 // trim()
 $string = " Hello There ";
 $string = trim($string);
@@ -74,18 +73,3 @@ var_dump( strrpos("Hi there. Hi.", "Hi") );
 
 var_dump( strrpos("Hi there. Hi.", "hi") );
 var_dump( strripos("Hi there. Hi.", "hi") );
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
