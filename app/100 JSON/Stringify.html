@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Send JSON</title>
+</head>
+<body>
+    <div id="result"></div>
+
+    <script>
+        let data = {
+            "name":"Dino Cajic",
+            "age":102,
+            "email":"dino@example.com",
+            "isWriting":true,
+            "tailColor":null
+        };
+
+        let xhr = new XMLHttpRequest();
+
+        xhr.open("POST", "http://0.0.0.0/100%20JSON/JsonDecodeRequest.php");
+        xhr.onreadystatechange = function() {
+            if (xhr.readyState === 4 && xhr.status === 200) {
+                let div = document.getElementById("result");
+                div.innerHTML = xhr.responseText;
+            }
+        }
+
+        xhr.setRequestHeader("Content-type", "application/json")
+        xhr.send( JSON.stringify(data) );
+    </script>
+</body>
+</html>
